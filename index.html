@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header-container">
+            <img src="lock-icon.svg" alt="ícone de cadeado" class="header-icon">
+            <h1 class="header-title">Gerador de Senhas</h1>
+            <p class="header-subtitle">Crie senhas fortes e únicas em segundos.</p>
+        </header>
+
+        <section class="gerador-senha">
+            <div class="senha-display">
+                <input type="text" id="senha-gerada" class="senha-input" readonly placeholder="Sua senha aparecerá aqui">
+                <button id="botao-copiar" class="copiar-button" title="Copiar senha">
+                    <img src="copy-icon.svg" alt="ícone de copiar">
+                </button>
+            </div>
+
+            <div class="controles">
+                <div class="comprimento-senha">
+                    <label for="slider-comprimento">Comprimento: <span id="valor-comprimento">12</span></label>
+                    <input type="range" id="slider-comprimento" min="4" max="32" value="12">
+                </div>
+
+                <div class="opcoes-caracteres">
+                    <h3 class="opcoes-titulo">Incluir:</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="maiusculas" checked>
+                        <label for="maiusculas">Letras maiúsculas (A-Z)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="minusculas" checked>
+                        <label for="minusculas">Letras minúsculas (a-z)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="numeros" checked>
+                        <label for="numeros">Números (0-9)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="simbolos" checked>
+                        <label for="simbolos">Símbolos (!@#$)</label>
+                    </div>
+                </div>
+
+                <div class="forca-senha">
+                    <h3 class="forca-titulo">Força da senha:</h3>
+                    <div class="barra-forca">
+                        <div id="indicador-forca" class="indicador-forca fraca"></div>
+                    </div>
+                    <p id="texto-forca" class="texto-forca">Fraca</p>
+                </div>
+            </div>
+            
+            <button id="botao-gerar" class="gerar-button">Gerar Senha</button>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
